@@ -17,7 +17,7 @@ brand/brand.md         colours, apps, links, voice
 brand/fonts/           Plus Jakarta Sans (500, 700, 800)
 brand/icons/           app icons
 templates/card.html    the card template for every app (Facebook 1080×1350, TikTok 1080×1920)
-scripts/render.py      post.json → facebook.png + tiktok-N.png
+scripts/render.py      post.json → facebook.png + tiktok-N.jpg
 posts/YYYY-MM-DD/      one folder per day: images, post.json, captions.md
 log.md                 one line per day: app, angle, what posted
 ```
@@ -27,7 +27,7 @@ log.md                 one line per day: app, angle, what posted
 2. Write `posts/<date>/post.json` and `captions.md`.
 3. `python3 scripts/render.py posts/<date>/post.json`
 4. Commit and push to `main`.
-5. Post to Facebook with the raw `facebook.png` link, and schedule the TikTok carousel for 19:30 with the raw `tiktok-N.png` links.
+5. Post to Facebook with the raw `facebook.png` link, and schedule the TikTok carousel for 19:30 with the raw `tiktok-N.jpg` links.
 6. Add a line to `log.md` and push.
 
 ## Render locally

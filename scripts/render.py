@@ -14,7 +14,7 @@ post.json:
   ]
 }
 
-Writes facebook.png (1080x1350) and tiktok-1.png ... (1080x1920) next to post.json.
+Writes facebook.png (1080x1350) and tiktok-1.jpg ... (TikTok only accepts JPEG/WebP) (1080x1920) next to post.json.
 Needs: pip install playwright && python3 -m playwright install chromium
 """
 import asyncio, html, json, pathlib, sys
@@ -67,7 +67,7 @@ async def main(spec_path):
         jobs.append(("facebook.png", *fill(app, "fb", spec["facebook"])))
     slides = spec.get("tiktok") or []
     for i, s in enumerate(slides, 1):
-        jobs.append((f"tiktok-{i}.png", *fill(app, "tt", s, f"{i}/{len(slides)}")))
+        jobs.append((f"tiktok-{i}.jpg", *fill(app, "tt", s, f"{i}/{len(slides)}")))
     async with async_playwright() as p:
         b = await p.chromium.launch()
         for name, page_html, w, h in jobs:
@@ -77,7 +77,7 @@ async def main(spec_path):
             await pg.goto(tmp.as_uri())
             await pg.evaluate("document.fonts.ready")
             await pg.wait_for_timeout(200)
-            await pg.screenshot(path=str(out_dir / name))
+            await pg.screenshot(path=str(out_dir / name), **({"type": "jpeg", "quality": 92} if name.endswith(".jpg") else {}))
             await pg.close()
             tmp.unlink()
             print(out_dir / name)
