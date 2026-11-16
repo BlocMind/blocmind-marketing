@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- One template for every app card. scripts/render.py fills the {{...}} slots. -->
+<style>
+@font-face{font-family:J;src:url(../brand/fonts/plus-jakarta-sans-latin-500-normal.woff);font-weight:500}
+@font-face{font-family:J;src:url(../brand/fonts/plus-jakarta-sans-latin-700-normal.woff);font-weight:700}
+@font-face{font-family:J;src:url(../brand/fonts/plus-jakarta-sans-latin-800-normal.woff);font-weight:800}
+*{box-sizing:border-box;margin:0}
+body{font-family:J;-webkit-font-smoothing:antialiased}
+.card{position:relative;overflow:hidden;width:{{w}}px;height:{{h}}px;padding:{{pad}};display:flex;flex-direction:column;background:{{bg}};color:{{fg}}}
+.blocs{position:absolute;right:-140px;top:-140px;display:grid;grid-template-columns:repeat(2,240px);gap:40px;opacity:.07}
+.blocs i{display:block;width:240px;height:240px;border-radius:60px;background:{{fg}}}
+.blocs i.m{border-radius:50%}
+.top{display:flex;align-items:center;gap:28px}
+.top img{width:120px;height:120px;border-radius:30px}
+.name{display:flex;flex-direction:column}
+.name b{font-size:60px;font-weight:800;letter-spacing:-2px;line-height:1.05}
+.name span{font-size:28px;font-weight:500;color:{{sub}}}
+.n{margin-left:auto;padding:12px 22px;border-radius:999px;background:{{chipBg}};color:{{chipFg}};font-size:30px;font-weight:800}
+.mid{margin:auto 0;display:flex;flex-direction:column;gap:34px}
+.eyebrow{align-self:flex-start;padding:12px 22px;border-radius:14px;background:{{chipBg}};color:{{chipFg}};font-size:30px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+h1{font-size:{{big}}px;font-weight:800;line-height:1;letter-spacing:-.04em;text-wrap:balance}
+h1 i{font-style:normal;color:{{accent}}}
+p{font-size:{{subSize}}px;font-weight:500;line-height:1.35;color:{{sub}};max-width:900px}
+.foot{display:flex;align-items:center;justify-content:space-between}
+.cta{padding:22px 34px;border-radius:999px;background:{{accent}};color:{{ctaFg}};font-size:34px;font-weight:800}
+.bm{display:flex;align-items:center;gap:14px;font-size:36px;font-weight:800;letter-spacing:-1.5px}
+.mark{display:grid;grid-template-columns:repeat(2,22px);gap:6px}
+.mark i{display:block;width:22px;height:22px;border-radius:6px;background:{{fg}}}
+.mark i.m{border-radius:50%;background:{{mind}}}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="blocs"><i></i><i class="m"></i><i></i><i></i></div>
+  <div class="top">
+    <img src="../brand/icons/{{app}}-icon.png" alt="">
+    <div class="name"><b>{{appName}}</b><span>by blocmind</span></div>
+    {{nChip}}
+  </div>
+  <div class="mid">
+    {{eyebrowChip}}
+    <h1>{{headline}}<i>{{stop}}</i></h1>
+    {{subP}}
+  </div>
+  <div class="foot">
+    <span class="cta">{{cta}}</span>
+    <span class="bm"><span class="mark"><i></i><i class="m"></i><i></i><i></i></span>blocmind</span>
+  </div>
+</div>
+</body>
+</html>

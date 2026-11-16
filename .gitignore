@@ -1,0 +1,3 @@
+__pycache__/
+templates/_render_*.html
+.DS_Store
