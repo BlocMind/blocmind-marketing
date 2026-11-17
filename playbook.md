@@ -33,6 +33,14 @@ Never tie a post to tragedies, disasters, deaths, accidents, wars, terrorism, cr
 - Always `#blocmind` plus the app tag (`#fairloop #spencio #reap #markeo #axilo`).
 - Save both captions in `posts/<date>/captions.md`.
 
+## TikTok safe area (1080×1920)
+TikTok draws its own UI over photo posts. Keep ALL text, logos, buttons and key art inside the safe area, or it gets covered:
+- **Top 300px:** status bar and the "Find related content" search bar. Background only.
+- **Bottom 420px:** caption, username, carousel dots and comment box. Background only.
+- **Right 180px:** like / comment / save / share buttons (from mid-slide down). Background only.
+- Safe box: x 84–900, y 300–1500. `scripts/render.py` already pads to this; hand-made slides must follow it too. Facebook cards (1080×1350) have no overlay.
+- Check before publishing: look at every TikTok slide and confirm nothing important sits outside the safe box.
+
 ## Failure handling
 - Facebook photo post fails → retry once → post text + app link instead.
 - TikTok not connected or fails twice → skip TikTok today.

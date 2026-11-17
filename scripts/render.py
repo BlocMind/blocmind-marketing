@@ -39,8 +39,8 @@ def fill(app, f, slide, n=""):
     vals = dict(
         t, app=app,
         w=1080, h=1920 if tall else 1350,
-        pad="120px 84px 150px" if tall else "84px 84px 80px",
-        big=(104 if len(h) > 48 else 124) if tall else (88 if len(h) > 48 else 104),
+        pad="300px 180px 420px 84px" if tall else "84px 84px 80px",  # TikTok safe area: top 300 (status + search bar), bottom 420 (caption, dots), right 180 (action buttons)
+        big=(92 if len(h) > 48 else 112) if tall else (88 if len(h) > 48 else 104),
         subSize=46 if tall else 40,
         headline=html.escape(body), stop=html.escape(stop),
         eyebrowChip=f'<span class="eyebrow">{html.escape(slide["eyebrow"])}</span>' if slide.get("eyebrow") else "",

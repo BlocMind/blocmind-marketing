@@ -28,22 +28,22 @@ CSS = f"""
 .s{{position:relative;overflow:hidden;width:1080px;height:1920px;color:#fff;background:radial-gradient(120% 80% at 50% 30%,#3A2C8F 0%,{DEEP} 70%)}}
 .conf{{position:absolute;inset:0;z-index:1}}.conf i{{position:absolute;display:block}}
 .ray{{position:absolute;left:50%;top:44%;width:2800px;height:2800px;margin:-1400px 0 0 -1400px;background:repeating-conic-gradient(rgba(179,166,255,.10) 0 9deg,transparent 9deg 18deg)}}
-.top{{position:absolute;left:72px;right:72px;top:96px;display:flex;align-items:center;gap:20px;z-index:6}}
+.top{{position:absolute;left:72px;right:180px;top:300px;display:flex;align-items:center;gap:20px;z-index:6}}
 .top img{{width:88px;height:88px;border-radius:24px;box-shadow:0 0 0 4px rgba(255,255,255,.15)}}
 .top b{{font-size:46px;font-weight:800;letter-spacing:-1.5px}}
 .n{{margin-left:auto;padding:10px 20px;border-radius:999px;background:rgba(255,255,255,.14);font-weight:800;font-size:28px}}
-.c{{position:absolute;left:72px;right:72px;z-index:5}}
+.c{{position:absolute;left:72px;right:180px;z-index:5}}
 .tag{{display:inline-block;padding:14px 24px;border-radius:16px;background:{LIME};color:{DEEP};font-size:30px;font-weight:800;letter-spacing:2px;text-transform:uppercase}}
 h1{{font-weight:800;letter-spacing:-.045em;line-height:.95}}
 .big{{font-size:380px;font-weight:800;letter-spacing:-.06em;line-height:.85;background:linear-gradient(180deg,#fff 30%,{LILAC});-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 18px 0 {V})}}
 p{{font-size:46px;font-weight:500;line-height:1.35;color:#D9D3FF}}
-.store{{display:flex;align-items:center;gap:22px;padding:26px 34px;border-radius:30px;background:#fff;color:{DEEP};box-shadow:12px 12px 0 {V}}}
+.store{{display:flex;align-items:center;gap:22px;padding:20px 30px;border-radius:30px;background:#fff;color:{DEEP};box-shadow:12px 12px 0 {V}}}
 .store .ic{{width:76px;height:76px;border-radius:20px;display:grid;place-items:center;font-size:44px;background:{DEEP};color:#fff}}
 .store small{{display:block;font-size:26px;font-weight:700;color:#6B6496}}
 .store b{{font-size:48px;font-weight:800;letter-spacing:-1.5px}}
-.feat{{display:flex;align-items:center;gap:24px;padding:26px 30px;border-radius:30px;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.14);font-size:40px;font-weight:700}}
+.feat{{display:flex;align-items:center;gap:22px;padding:22px 26px;border-radius:30px;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.14);font-size:36px;font-weight:700}}
 .feat span{{width:72px;height:72px;flex:none;border-radius:20px;display:grid;place-items:center;font-size:38px;background:{V}}}
-.foot{{position:absolute;left:72px;right:72px;bottom:120px;display:flex;justify-content:space-between;align-items:center;font-size:32px;font-weight:800;z-index:3;color:#D9D3FF}}
+.foot{{position:absolute;left:72px;right:180px;bottom:430px;display:flex;justify-content:space-between;align-items:center;font-size:32px;font-weight:800;z-index:3;color:#D9D3FF}}
 .mark{{display:inline-grid;grid-template-columns:repeat(2,20px);gap:5px;vertical-align:middle;margin-right:12px}}
 .mark i{{display:block;width:20px;height:20px;border-radius:5px;background:#fff}}.mark i.m{{border-radius:50%;background:{LILAC}}}
 """
@@ -56,28 +56,28 @@ STORES = f'''<div style="display:flex;flex-direction:column;gap:26px">
 
 TT = [
 f'''<div class="s"><div class="ray"></div>{confetti(90)}{top('1/4')}
-<div class="c" style="top:420px;text-align:center"><span class="tag">Milestone 🎉</span>
-<div class="big" style="margin-top:50px">1K+</div>
-<h1 style="font-size:120px;margin-top:40px">downloads<span style="color:{LIME}">.</span></h1>
+<div class="c" style="top:440px;text-align:center"><span class="tag">Milestone 🎉</span>
+<div class="big" style="margin-top:40px;font-size:330px">1K+</div>
+<h1 style="font-size:110px;margin-top:30px">downloads<span style="color:{LIME}">.</span></h1>
 <p style="margin-top:40px">Thank you for saving with Markeo.</p></div>{FOOT}</div>''',
 f'''<div class="s">{confetti(30)}{top('2/4')}
-<div class="c" style="top:280px"><h1 style="font-size:118px">Why 1,000+ people keep their links here<span style="color:{LIME}">.</span></h1>
-<div style="display:flex;flex-direction:column;gap:22px;margin-top:70px">
+<div class="c" style="top:420px"><h1 style="font-size:92px">Why 1,000+ people keep their links here<span style="color:{LIME}">.</span></h1>
+<div style="display:flex;flex-direction:column;gap:18px;margin-top:44px">
 <div class="feat"><span>↗</span>Save from any app in one tap</div>
 <div class="feat"><span>⏰</span>Read-later reminders that actually remind</div>
 <div class="feat"><span>🗂</span>Folders and smart collections</div>
 <div class="feat"><span>🔒</span>No account. Links stay on your phone</div>
 </div></div>{FOOT}</div>''',
 f'''<div class="s"><div class="ray"></div>{confetti(60)}{top('3/4')}
-<div class="c" style="top:320px"><span class="tag">New</span>
-<h1 style="font-size:150px;margin-top:40px">Now on iPhone too<span style="color:{LIME}">.</span></h1>
-<p style="margin-top:40px;max-width:880px">Markeo is live on the App Store. Same calm app, now on both platforms.</p></div>
-<div class="c" style="top:1180px">{STORES}</div>{FOOT}</div>''',
+<div class="c" style="top:420px"><span class="tag">New</span>
+<h1 style="font-size:128px;margin-top:30px">Now on iPhone too<span style="color:{LIME}">.</span></h1>
+<p style="margin-top:30px;font-size:40px">Markeo is live on the App Store. Same calm app, now on both platforms.</p></div>
+<div class="c" style="top:1130px">{STORES}</div>{FOOT}</div>''',
 f'''<div class="s"><div class="ray"></div>{confetti(70)}{top('4/4')}
-<div class="c" style="top:360px;text-align:center"><img src="{ICON}" style="width:240px;height:240px;border-radius:60px;box-shadow:0 0 0 10px rgba(255,255,255,.12),20px 20px 0 {V}">
-<h1 style="font-size:128px;margin-top:70px">Get Markeo<span style="color:{LIME}">.</span></h1>
+<div class="c" style="top:430px;text-align:center"><img src="{ICON}" style="width:200px;height:200px;border-radius:60px;box-shadow:0 0 0 10px rgba(255,255,255,.12),20px 20px 0 {V}">
+<h1 style="font-size:116px;margin-top:50px">Get Markeo<span style="color:{LIME}">.</span></h1>
 <p style="margin-top:30px">Search “Markeo” on the App Store or Google Play.</p></div>
-<div class="c" style="top:1200px">{STORES}</div>{FOOT}</div>''',
+<div class="c" style="top:1130px">{STORES}</div>{FOOT}</div>''',
 ]
 
 FB = f'''<div class="s" style="height:1350px"><div class="ray" style="top:40%"></div>{confetti(70,1080,1350)}
